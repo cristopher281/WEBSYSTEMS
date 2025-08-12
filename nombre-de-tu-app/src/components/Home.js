@@ -5,6 +5,7 @@ const Home = () => (
   <section className="home-section">
     <div className="home-bg-anim"></div>
     <div className="home-content">
+  <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Logo WEBSYSTEMS" style={{height: '120px', marginBottom: '1rem', borderRadius: '18px', boxShadow: '0 4px 24px #232a3d'}} />
       <h1>Bienvenido a <span>WEBSYSTEMS</span></h1>
       <h2>Soluciones web futuristas para tu empresa</h2>
       <p>Desarrollamos sistemas web únicos, modernos y adaptados a tus necesidades. ¡Impulsa tu negocio con tecnología de vanguardia!</p>

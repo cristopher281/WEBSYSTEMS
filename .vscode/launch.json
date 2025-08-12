@@ -1,0 +1,75 @@
+{
+  // Use IntelliSense para saber los atributos posibles.
+  // Mantenga el puntero para ver las descripciones de los existentes atributos.
+  // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+  {
+    "name": "Launch Chrome",
+    "request": "launch",
+    "type": "chrome",
+    "url": "http://localhost:8080",
+    "webRoot": "${workspaceFolder}"
+  },
+  {
+    "name": "Attach to Chrome",
+    "port": 9222,
+    "request": "attach",
+    "type": "chrome",
+    "webRoot": "${workspaceFolder}"
+  },
+  {
+    "name": "Attach to Chrome",
+    "port": 9222,
+    "request": "attach",
+    "type": "chrome",
+    "webRoot": "${workspaceFolder}"
+  },
+    {
+      "name": "Depurador de Python: Archivo actual sin depurar",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": false,
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Depurador de Python: Archivo actual",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/src/index.js",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Attach to Process",
+      "processId": "${command:PickProcess}"
+    },
+
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "SWA: Run nombre-de-tu-app",
+      "request": "launch",
+      "type": "pwa-chrome",
+      "url": "http://localhost:4280",
+      "preLaunchTask": "swa: start nombre-de-tu-app",
+      "webRoot": "${workspaceFolder}/nombre-de-tu-app",
+      "timeout": 30000
+    }
+  ]
+}

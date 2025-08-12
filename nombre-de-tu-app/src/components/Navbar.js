@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => (
   <nav className="navbar futuristic-navbar">
-    <div className="logo">WEBSYSTEMS</div>
+    <div className="logo">
+  <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Logo WEBSYSTEMS" style={{height: '56px', verticalAlign: 'middle', borderRadius: '12px', boxShadow: '0 2px 12px #232a3d'}} />
+    </div>
     <ul>
       <li><Link to="/">Inicio</Link></li>
       <li><Link to="/servicios">Sistemas</Link></li>

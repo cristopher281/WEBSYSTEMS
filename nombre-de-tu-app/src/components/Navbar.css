@@ -1,46 +1,63 @@
 /* Navbar futurista con animaciones */
+
 .navbar {
+  width: 100%;
+  padding: 1.2rem 2.5rem;
+  background: rgba(34, 42, 61, 0.85);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px rgba(34,42,61,0.18), 0 1.5px 8px #7f9cf544;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 2rem;
-  background: linear-gradient(90deg, #0f2027, #2c5364 80%, #00f2fe 100%);
-  box-shadow: 0 4px 32px rgba(0,255,255,0.15);
-  border-radius: 16px;
-  margin: 1rem;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 2.5px solid #7f9cf544;
   animation: navFadeIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 .logo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #00f2fe;
-  text-shadow: 0 0 8px #00f2fe, 0 0 32px #2c5364;
-  letter-spacing: 2px;
-  font-family: 'Orbitron', sans-serif;
-}
-ul {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  padding-right: 1.5rem;
+}
+.navbar ul {
   list-style: none;
+  display: flex;
+  gap: 2.2rem;
+  margin: 0;
+  padding: 0;
 }
-ul li a {
-  color: #fff;
-  font-size: 1.1rem;
+.navbar ul li a {
+  color: #eaf0fa;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 14px;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-  font-family: 'Montserrat', sans-serif;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
 }
-ul li a:hover {
-  background: rgba(0,242,254,0.15);
-  color: #00f2fe;
-  box-shadow: 0 0 12px #00f2fe;
+.navbar ul li a:hover, .navbar ul li a.active {
+  background: linear-gradient(90deg, #7f9cf5 0%, #232a3d 100%);
+  color: #fff;
+  box-shadow: 0 2px 16px #7f9cf544;
+  transform: scale(1.08) translateY(-2px);
 }
 @keyframes navFadeIn {
-  from { opacity: 0; transform: translateY(-40px); }
-  to { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translateY(-40px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (max-width: 900px) {
+  .navbar {
+    padding: 1rem 0.5rem;
+  }
+  .navbar ul {
+    gap: 0.5rem;
+  }
+  .logo img {
+    height: 38px !important;
+  }
 }

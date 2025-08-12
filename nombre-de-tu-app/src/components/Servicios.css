@@ -1,8 +1,9 @@
 /* Servicios con cards animadas y efecto glassmorphism */
+
 .servicios-section {
   padding: 3rem 1rem;
-  background: linear-gradient(120deg, #232526 0%, #0f2027 100%);
-  color: #fff;
+  background: linear-gradient(120deg, #181c2b 0%, #232a3d 100%);
+  color: #eaf0fa;
   text-align: center;
 }
 .sistemas-list {
@@ -12,31 +13,65 @@
   justify-content: center;
   margin-top: 2rem;
 }
+/* Servicios avanzado */
+.servicios-section {
+  padding: 3rem 2rem;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #232a3d 0%, #7f9cf5 100%);
+}
+.sistemas-list {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
 .sistema-card {
-  background: rgba(44,83,100,0.25);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0,242,254,0.12);
-  width: 260px;
-  padding: 2rem 1.2rem;
-  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.3s;
+  background: rgba(34,42,61,0.55);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-radius: 24px;
+  box-shadow: 0 12px 32px 0 rgba(34,42,61,0.18), 0 1.5px 8px #7f9cf544;
+  width: 320px;
+  min-height: 260px;
+  padding: 2.2rem 1.4rem 1.2rem 1.4rem;
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.3s, border 0.3s;
   position: relative;
   overflow: hidden;
-  border: 2px solid #00f2fe44;
+  border: 2.5px solid #7f9cf544;
   animation: cardPop 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+  text-decoration: none;
+  color: #eaf0fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 800px;
+  will-change: transform, box-shadow;
 }
 .sistema-card:hover {
-  transform: scale(1.07) rotate(-2deg);
-  box-shadow: 0 0 32px #00f2fe;
-  border-color: #00f2fe;
+  transform: scale(1.08) rotateY(6deg) translateY(-8px);
+  box-shadow: 0 0 48px #7f9cf5, 0 2px 24px #7f9cf544;
+  border-color: #7f9cf5;
+  z-index: 2;
 }
 .sistema-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 16px #00f2fe;
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  color: #7f9cf5;
+  text-shadow: 0 0 18px #7f9cf5;
 }
 @keyframes cardPop {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
+  0% { opacity: 0; transform: scale(0.8) rotateY(-10deg); }
+  100% { opacity: 1; transform: scale(1) rotateY(0deg); }
+}
+@media (max-width: 900px) {
+  .sistemas-list {
+    gap: 1rem;
+  }
+  .sistema-card {
+    width: 98vw;
+    min-width: 220px;
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
 }

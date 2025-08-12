@@ -1,18 +1,19 @@
 /* Sección Nosotros con glassmorphism y animaciones */
+
 .nosotros-section {
   padding: 3rem 1rem;
-  background: linear-gradient(120deg, #232526 0%, #0f2027 100%);
-  color: #fff;
+  background: linear-gradient(120deg, #181c2b 0%, #232a3d 100%);
+  color: #eaf0fa;
   text-align: center;
 }
 .nosotros-content {
   margin: 2rem auto;
   max-width: 800px;
-  background: rgba(44,83,100,0.25);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  background: rgba(34,42,61,0.45);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0,242,254,0.12);
+  box-shadow: 0 8px 32px rgba(34,42,61,0.12);
   padding: 2rem 2.5rem;
   animation: fadeInNosotros 1.5s cubic-bezier(.68,-0.55,.27,1.55);
 }
@@ -23,29 +24,66 @@
   gap: 2rem;
   flex-wrap: wrap;
 }
+/* Nosotros avanzado */
+.nosotros-section {
+  padding: 3rem 2rem;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #232a3d 0%, #7f9cf5 100%);
+}
+.nosotros-content {
+  background: rgba(34,42,61,0.55);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 32px rgba(34,42,61,0.18), 0 1.5px 8px #7f9cf544;
+  border-radius: 32px;
+  padding: 3rem 2.8rem;
+  animation: fadeInNosotros 1.5s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.valores {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .valores div {
-  background: rgba(0,242,254,0.08);
-  border-radius: 16px;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 0 16px #00f2fe22;
-  min-width: 180px;
-  flex: 1;
+  background: rgba(127,156,245,0.12);
+  border-radius: 18px;
+  box-shadow: 0 2px 18px #7f9cf522;
+  padding: 1.5rem 2rem;
   margin: 0.5rem;
+  min-width: 220px;
+  max-width: 320px;
+  text-align: left;
 }
 .valores h3 {
-  color: #00f2fe;
-  font-family: 'Orbitron', sans-serif;
-  margin-bottom: 0.5rem;
+  color: #7f9cf5;
+  margin-bottom: 0.7rem;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 .valores ul {
-  list-style: none;
-  padding: 0;
+  padding-left: 1.2rem;
 }
 .valores li {
   margin-bottom: 0.3rem;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
 }
 @keyframes fadeInNosotros {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translateY(40px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (max-width: 900px) {
+  .nosotros-content {
+    padding: 1.2rem 0.5rem;
+    border-radius: 18px;
+  }
+  .valores {
+    gap: 1rem;
+  }
+  .valores div {
+    min-width: 98vw;
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+  }
 }
